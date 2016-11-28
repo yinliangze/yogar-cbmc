@@ -28,9 +28,9 @@ LIBS =
 include ../config.inc
 include ../common
 
-CLEANFILES = cbmc$(EXEEXT)
+CLEANFILES = yogar-cbmc$(EXEEXT)
 
-all: cbmc$(EXEEXT)
+all: yogar-cbmc$(EXEEXT)
 
 ifneq ($(wildcard ../bv_refinement/Makefile),)
   OBJ += ../bv_refinement/bv_refinement$(LIBEXT)
@@ -59,11 +59,11 @@ endif
 
 ###############################################################################
 
-cbmc$(EXEEXT): $(OBJ)
+yogar-cbmc$(EXEEXT): $(OBJ)
 	$(LINKBIN)
 
-.PHONY: cbmc-mac-signed
+.PHONY: yogar-cbmc-mac-signed
 
-cbmc-mac-signed: cbmc$(EXEEXT)
-	strip cbmc$(EXEEXT) ; codesign -v -s $(OSX_IDENTITY) cbmc$(EXEEXT)
+yogar-cbmc-mac-signed: yogar-cbmc$(EXEEXT)
+	strip yogar-cbmc$(EXEEXT) ; codesign -v -s $(OSX_IDENTITY) yogar-cbmc$(EXEEXT)
 
