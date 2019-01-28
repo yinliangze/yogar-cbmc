@@ -51,7 +51,7 @@ $(patsubst %, %_clean, $(DIRS)):
 
 minisat2-download:
 	@echo "Downloading Minisat 2.2.0"
-	@lwp-download http://ftp.debian.org/debian/pool/main/m/minisat2/minisat2_2.2.0.orig.tar.gz
+	@lwp-download http://snapshot.debian.org/archive/debian/20110121T043549Z/pool/main/m/minisat2/minisat2_2.2.0.orig.tar.gz
 	@tar xfz minisat2_2.2.0.orig.tar.gz
 	@rm -Rf ../minisat-2.2.0
 	@mv minisat-2.2.0 ../minisat-2.2.0
